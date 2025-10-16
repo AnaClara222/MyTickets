@@ -10,3 +10,5 @@ describe("GET / health", () => {
         expect(text).toBe(`I'm okay!`);
     });
 });
+
+console.log("Banco usado nos testes:", process.env.DATABASE_URL);

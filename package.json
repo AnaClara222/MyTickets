@@ -8,9 +8,9 @@
     "start": "npm run migration:run && npm run seed && node dist/src/server.js",
     "dev": "ts-node-dev src/server.ts",
     "migration:run": "prisma migrate deploy",
-    "test": "jest --runInBand",
-    "test:coverage": "jest --coverage --runInBand",
-    "test:setup": "npm run test:migrate"
+    "test": "dotenv -e .env.test -- jest --runInBand",
+    "test:coverage": "dotenv -e .env.test -- jest --coverage --runInBand",
+    "test:setup": "dotenv -e .env.test -- prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.14.10",
+    "dotenv-cli": "^10.0.0",
     "jest": "^30.2.0",
     "prisma": "^5.16.2",
     "ts-jest": "^29.4.5",
